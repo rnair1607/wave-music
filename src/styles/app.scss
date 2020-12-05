@@ -2,7 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+h1,h2,h3,h4,p{
+    color: antiquewhite;
+}
+h3,h4{
+    font-weight: 400;
+    color:#9c9797;
 }
 
 @import "./song";
 @import "./player";
+@import "./library"
