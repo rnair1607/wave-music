@@ -7,6 +7,9 @@
     box-shadow: 2px 2px 20px #7a7faf;
     background: #111013;
     overflow-y: scroll;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    opacity: 0;
     h2{
         padding: 2rem;
     }
