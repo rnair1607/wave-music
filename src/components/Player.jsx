@@ -68,14 +68,17 @@ const Player = ({
         <p>{getTime(songInfo.duration)}</p>
       </div>
       <div className="play-control">
-        {songs.findIndex((song) => song.id === currentSong.id) === 0 ? null : (
-          <FontAwesomeIcon
-            className="skip-back"
-            onClick={() => skipTrackHandler("skip-back")}
-            size="2x"
-            icon={faAngleLeft}
-          />
-        )}
+        <FontAwesomeIcon
+          className={`skip-back ${
+            songs.findIndex((song) => song.id === currentSong.id) === 0
+              ? "hide-button"
+              : ""
+          }`}
+          onClick={() => skipTrackHandler("skip-back")}
+          size="2x"
+          icon={faAngleLeft}
+        />
+
         {isPlaying ? (
           <FontAwesomeIcon
             className="play"
@@ -91,15 +94,18 @@ const Player = ({
             onClick={playSongHandler}
           />
         )}
-        {songs.findIndex((song) => song.id === currentSong.id) + 1 ===
-        songs.length ? null : (
-          <FontAwesomeIcon
-            className="skip-forward"
-            size="2x"
-            onClick={() => skipTrackHandler("skip-forward")}
-            icon={faAngleRight}
-          />
-        )}
+
+        <FontAwesomeIcon
+          className={`skip-forward ${
+            songs.findIndex((song) => song.id === currentSong.id) + 1 ===
+            songs.length
+              ? "hide-button"
+              : ""
+          }`}
+          size="2x"
+          onClick={() => skipTrackHandler("skip-forward")}
+          icon={faAngleRight}
+        />
       </div>
     </div>
   );
